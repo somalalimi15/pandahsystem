@@ -1,0 +1,1 @@
+worjer: node bot.js
