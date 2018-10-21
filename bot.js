@@ -124,4 +124,31 @@ client.on("guildMemberAdd", (member) => {
     })
 });
 
+var ss = 0;
+ 
+client.on('voiceStateUpdate', (o,n) => {
+    if (o.voiceChannel && !n.voiceChannel) {
+        ss-=1
+        n.guild.channels.get("503631031082156074").edit({
+            name : "# Panda Online.🐼 : [" + ss+ "]"
+        })
+    };
+    if (n.voiceChannel && !o.voiceChannel) {
+        ss+=1
+        n.guild.channels.get("503631031082156074").edit({
+            name : "# Panda Online.🐼 : [" + ss+ "]"
+        })
+    }
+})
+client.on("ready", () => {
+    client.guilds.get("483724155758575646").members.forEach(m => {
+        if (m.voiceChannel) {
+            ss+=1
+        };
+        client.channels.get("503631031082156074").edit({
+            name : "# Panda Online.🐼 : [" + ss+ "]"
+        })
+    });
+});
+
 client.login(process.env.BOT_TOKEN);
