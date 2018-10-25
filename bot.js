@@ -76,7 +76,7 @@ client.on('guildMemberAdd', member=> {
 
 
 
-    client.channels.get("502466166095216641").send(`** 🐼 # Wèlčomè Ťo Panda Army.🐼  **
+    client.channels.get("483724155758575648").send(`** 🐼 # Wèlčomè Ťo Panda Army.🐼  **
 **# أسـم العضُـو.: ${member} .
   # أنت رُقـم.: ${member.guild.memberCount} . **`);
 
